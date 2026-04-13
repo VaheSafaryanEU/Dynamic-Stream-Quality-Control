@@ -132,10 +132,11 @@ export class NetworkAwareAdaptor {
    *
    * AUTO     → drop only when the network is degraded (POOR / CRITICAL).
    * BEST_FPS → always drop to fit the budget and keep motion smooth.
-   * Others   → never drop (BEST_QUALITY wants clean frames; LOW_LATENCY
-   *             wants the stream as-is so the encoder can decide).
+   * BEST_QUALITY → always drop to fit the budget and keep motion smooth.
+   * Others   → never drop.
    */
   private shouldDropFrames(
+    if (requirement === UserRequirement.BEST_QUALITY) return true;
     requirement:   UserRequirement,
     networkHealth: NetworkHealthAnalysis,
   ): boolean {
