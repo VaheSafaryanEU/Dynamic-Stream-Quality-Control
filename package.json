@@ -1,0 +1,30 @@
+{
+  "name": "dynamic-stream-quality-control",
+  "version": "1.0.0",
+  "description": "Adaptive stream quality selector — pure logic, zero I/O. Drop into any Node.js streaming system.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3",
+    "vitest": "^2.0.0"
+  },
+  "keywords": [
+    "stream",
+    "adaptive-bitrate",
+    "qos",
+    "quality-control",
+    "video"
+  ],
+  "license": "MIT"
+}
